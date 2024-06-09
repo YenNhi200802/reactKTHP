@@ -23,6 +23,8 @@ function Login(props) {
     password.length > 0 &&
     isValidEmail(email) == true &&
     isValidPassword(password) == true;
+  const {navigation, route} = props;
+  const {navigate, goBack} = navigation;
   return (
     <View style={{flex: 100, backgroundColor: 'white'}}>
       <ImageBackground
@@ -66,11 +68,6 @@ function Login(props) {
             </Text>
             <TextInput
               onChangeText={text => {
-                // if (isValidEmail(text) == false) {
-                //   setErrorEmail('Email not in correct format');
-                // } else {
-                //   setErrorEmail('');
-                // }
                 setErrorEmail(
                   isValidEmail(text) == true
                     ? ''
@@ -136,7 +133,8 @@ function Login(props) {
           <TouchableOpacity
             disabled={isValidActionOk() == false}
             onPress={() => {
-              alert(`Email = ${email}, Password = ${password}`);
+              // alert(`Email = ${email}, Password = ${password}`);
+              navigate('UITab');
             }}
             style={{
               backgroundColor:

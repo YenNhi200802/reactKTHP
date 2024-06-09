@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 import {image, colors, fontSizes} from '../constants';
 import {UIButton} from '../components';
+import {preset} from '../jest.config';
+import Login from './Login';
+import Register from './Register';
 
 function Home(props) {
   //state => when state is change => UI is reloaded.
@@ -19,13 +22,15 @@ function Home(props) {
     },
     {
       name: 'Business',
-      isSelected: true,
+      isSelected: false,
     },
     {
       name: 'Indivaidual',
       isSelected: false,
     },
   ]);
+  const {navigation, route} = props;
+  const {navigate, goBack} = navigation;
   return (
     <View
       style={{
@@ -122,7 +127,10 @@ function Home(props) {
           style={{
             flex: 20,
           }}>
-          <UIButton title={'LOGIN'} />
+          <UIButton
+            onPress={() => navigate('Login')}
+            title={'Login'.toUpperCase()}
+          />
           <Text
             style={{
               color: colors.sub,
@@ -132,7 +140,7 @@ function Home(props) {
             Want to register new Account?
           </Text>
           <TouchableOpacity
-            onPress={() => alert('Press Rigister')}
+            onPress={() => navigate('Register')}
             style={{padding: 5}}>
             <Text
               style={{
