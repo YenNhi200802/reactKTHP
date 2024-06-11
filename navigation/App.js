@@ -12,7 +12,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StackRouter} from 'react-navigation';
-import {Home, Login, Register} from '../screen';
+import {Home, Login, Register, Messenger} from '../screen';
+
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -34,6 +35,7 @@ function App(props) {
         <Stack.Screen name={'Login'} component={Login} />
         <Stack.Screen name={'Register'} component={Register} />
         <Stack.Screen name={'UITab'} component={UITab} />
+        <Stack.Screen name={'Messenger'} component={Messenger} />
       </Stack.Navigator>
     </NavigationContainer>
   );

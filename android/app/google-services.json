@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "124087241804",
+    "project_id": "react-6e61a",
+    "storage_bucket": "react-6e61a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124087241804:android:e6df840c03c2f873b938e9",
+        "android_client_info": {
+          "package_name": "com.myshopnnf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADZtRjF7653XuIbYMzd5FX7goJXuZ86Cs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

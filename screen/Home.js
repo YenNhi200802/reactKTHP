@@ -104,32 +104,21 @@ function Home(props) {
         </View>
         <View
           style={{
-            flex: 40,
-          }}>
-          {accountTypes.map(accountType => (
-            <UIButton
-              onPress={() => {
-                setAccountTypes(
-                  accountTypes.map(eachAccountType => {
-                    return {
-                      ...eachAccountType,
-                      isSelected: eachAccountType.name == accountType.name,
-                    };
-                  }),
-                );
-              }}
-              title={accountType.name}
-              isSelected={accountType.isSelected}
-            />
-          ))}
-        </View>
+            flex: 20,
+          }}></View>
         <View
           style={{
-            flex: 20,
+            flex: 60,
           }}>
           <UIButton
             onPress={() => navigate('Login')}
             title={'Login'.toUpperCase()}
+            isSelected={true}
+          />
+          <UIButton
+            onPress={() => navigate('Register')}
+            title={'Register'.toUpperCase()}
+            isSelected={true}
           />
           <Text
             style={{
@@ -139,19 +128,6 @@ function Home(props) {
             }}>
             Want to register new Account?
           </Text>
-          <TouchableOpacity
-            onPress={() => navigate('Register')}
-            style={{padding: 5}}>
-            <Text
-              style={{
-                color: colors.primary,
-                fontSize: fontSizes.h6,
-                alignSelf: 'center',
-                textDecorationLine: 'underline',
-              }}>
-              Register
-            </Text>
-          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>

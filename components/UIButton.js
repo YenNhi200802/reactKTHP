@@ -18,18 +18,6 @@ function UIButton(props) {
         alignItems: 'center',
         backgroundColor: isSelected == true ? 'white' : null,
       }}>
-      {isSelected == true && (
-        <Icon
-          size={20}
-          name={'check-circle'}
-          style={{
-            color: colors.primary,
-            position: 'absolute',
-            left: 10,
-            top: 10,
-          }}
-        />
-      )}
       <Text
         style={{
           color: isSelected == true ? colors.primary : colors.sub,

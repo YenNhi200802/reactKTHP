@@ -11,6 +11,8 @@ import {
 import {image, colors, fontSizes} from '../constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {isValidEmail, isValidPassword} from '../ultilies/Validation';
+import Register from './Register';
+
 function Login(props) {
   //states for validating.
   const [errorEmail, setErrorEmail] = useState('');
@@ -150,6 +152,7 @@ function Login(props) {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={() => navigate('Register')}
             style={{
               padding: 5,
             }}>

@@ -10,6 +10,7 @@ import {
 import {image, colors, fontSizes} from '../constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {isValidEmail, isValidPassword} from '../ultilies/Validation';
+import {user as UserRepository} from '../repositories';
 function Register(props) {
   //states for validating.
   const [errorEmail, setErrorEmail] = useState('');

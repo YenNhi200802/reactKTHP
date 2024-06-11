@@ -5,7 +5,9 @@ import FoodList from './FoodList/FoodList';
 import ProductGridView from './ProductGrid/ProductGridView';
 import Chat from './chats/Chat';
 import Settings from './Settings';
+import Profile from './Profile';
 import UITab from '../navigation/UITab';
+import Messenger from './Messenger/Messenger';
 export {
   Home,
   Login,
@@ -15,4 +17,6 @@ export {
   Chat,
   Settings,
   UITab,
+  Profile,
+  Messenger,
 };

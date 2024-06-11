@@ -7,15 +7,14 @@ import {
   TextInput,
   FlatList,
 } from 'react-native';
-import {images, colors, icons, fontSizes} from '../../constants';
+import {images, colors, icons, fontSizes} from '../../constants/index.js';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import {UIHeader} from '../../components';
-import FoodItem from '../FoodList/FoodItem';
-import ChatItem from './ChatItem';
+import {UIHeader} from '../../components/index.js';
+import MessengerItem from './MessengerItem.js';
 import {interpolate} from 'react-native-reanimated';
 
-function Chat(props) {
-  const [user, setUser] = useState([
+function Messenger(props) {
+  const [messages, setMessages] = useState([
     {
       url: 'https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/anh-avatar-cute-95.jpg',
       name: 'NiNa Jea',
@@ -36,8 +35,6 @@ function Chat(props) {
     },
   ]);
   const {numberOfStars} = props;
-  const {navigation, route} = props;
-  const {navigate, goBack} = navigation;
   return (
     <View>
       <UIHeader
@@ -52,7 +49,7 @@ function Chat(props) {
         renderItem={({item}) => (
           <ChatItem
             onPress={() => {
-              navigate('Messenger');
+              alert(`press: ${item.name}`);
             }}
             user={item}
             key={item.name}
@@ -63,4 +60,4 @@ function Chat(props) {
   );
 }
 
-export default Chat;
+export default Messenger;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Settings, ProductGridView, FoodList} from '../screen';
+import {Settings, ProductGridView, FoodList, Chat, Profile} from '../screen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {fontSizes, colors} from '../constants';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -21,11 +21,15 @@ const screenOptions = ({route}) => ({
         }}
         name={
           route.name == 'ProductGridView'
-            ? 'align-center'
+            ? 'tag'
             : route.name == 'FoodList'
-            ? 'accusoft'
+            ? 'align-center'
+            : route.name == 'Chat'
+            ? 'envelope'
             : route.name == 'Settings'
             ? 'cogs'
+            : route.name == 'Profile'
+            ? 'user-alt'
             : ''
         }
         size={23}
@@ -37,9 +41,31 @@ const screenOptions = ({route}) => ({
 function UITab(props) {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen name="ProductGridView" component={ProductGridView} />
-      <Tab.Screen name="FoodList" component={FoodList} />
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen
+        name={'ProductGridView'}
+        component={ProductGridView}
+        options={{tabBarLabel: 'Sản phẩm'}}
+      />
+      <Tab.Screen
+        name="FoodList"
+        component={FoodList}
+        options={{tabBarLabel: 'Danh mục'}}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={Chat}
+        options={{tabBarLabel: 'Chat'}}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{tabBarLabel: 'Cá nhân'}}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{tabBarLabel: 'Cài đặt'}}
+      />
     </Tab.Navigator>
   );
 }
